@@ -5,7 +5,73 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>theme changerg</title>
 </head>
-<body>
-    
+
+<style>
+
+    .img{
+       text-align: center;
+    }
+    .icon{
+        height: 80px;
+      width: auto;
+        cursor: pointer;
+       margin: 10px auto;
+       padding: 20px 10px;
+       margin: 30px auto;
+    border-radius: 5px;
+    background-color: white;
+    }
+
+    .text{
+        text-align: center;
+    }
+
+    .active{
+    border: 2px solid blue;
+    }
+
+    .light-mode{
+        background-color: #ffff80;
+        color: black;
+    }
+
+    .dark-mode{
+        background-color: black;
+        color: white;
+    }
+</style>
+<body id="body" class="light-mode">
+    <div class="img"> 
+        <img src="light-mode.png" class="icon " id="light" onclick="lightmode()"/>
+    <img src="dark -mde.png" class="icon  " id="dark" onclick="darkmode()"/> 
+
+    </div>
+    <h1 class="text" > This is Light and Dark Mode Theme Changer </h1>
+
+
+    <script>
+        function darkmode(){
+   const icondark = document.getElementById("dark");
+     icondark.classList.add("active")
+
+const iconlight = document.getElementById("light");
+iconlight.classList.remove("active");
+
+const bodyElement = document.getElementById("body");
+ bodyElement.className = "dark-mode";
+  }
+
+
+        function lightmode() {
+  const iconlight = document.getElementById("light");
+   iconlight.classList.add("active");
+
+const icondark = document.getElementById("dark");
+icondark.classList.remove("active");
+
+const bodyElement = document.getElementById("body");
+bodyElement.className = "light-mode";
+        }
+    </script>
 </body>
 </html>
